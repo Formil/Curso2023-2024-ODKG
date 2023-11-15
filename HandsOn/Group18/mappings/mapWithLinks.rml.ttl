@@ -9,6 +9,7 @@
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ns: <http://MadridTransit.com/> .
+@prefix nso: <http://MadridTransit.com/ontology/> .
 
 map:map_Accidents_000 rml:logicalSource map:source_000 ;
 	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:TriplesMap ;
@@ -59,7 +60,7 @@ map:map_Weather_000 rml:logicalSource map:source_002 ;
 	rr:subjectMap map:s_002 .
 
 map:om_000 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:constant ns:Accident ;
+	rr:constant nso:Accident ;
 	rr:termType rr:IRI .
 
 map:om_001 rml:reference "dateTime" ;
@@ -85,15 +86,15 @@ map:om_005 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
 	rr:termType rr:IRI .
 
 map:om_006 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:template "http://MadridTransit.com/Persons/{tipo_persona}/{recordNumber}" ;
+	rr:template "http://MadridTransit.com/Persons/{recordNumber}" ;
 	rr:termType rr:IRI .
 
 map:om_007 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:template "http://MadridTransit.com/Address/{recordNumber}" ;
+	rr:template "http://MadridTransit.com/Address/{num_expediente}" ;
 	rr:termType rr:IRI .
 
 map:om_008 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:constant ns:Vehicle ;
+	rr:constant nso:Vehicle ;
 	rr:termType rr:IRI .
 
 map:om_009 rml:reference "tipo_vehiculo" ;
@@ -109,7 +110,7 @@ map:om_011 rml:reference "Wikidata Type of Vehicle Code" ;
 	rr:termType rr:IRI .
 
 map:om_012 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:constant ns:Weather ;
+	rr:constant nso:Weather ;
 	rr:termType rr:IRI .
 
 map:om_013 rml:reference "estado_meteorologico" ;
@@ -125,7 +126,7 @@ map:om_015 rml:reference "Wikidata Weather Code" ;
 	rr:termType rr:IRI .
 
 map:om_016 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:constant ns:Person ;
+	rr:constant nso:Person ;
 	rr:termType rr:IRI .
 
 map:om_017 rml:reference "sexo" ;
@@ -155,7 +156,7 @@ map:om_022 rml:reference "positiva_droga" ;
 	rr:termType rr:Literal .
 
 map:om_023 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:constant ns:District ;
+	rr:constant nso:District ;
 	rr:termType rr:IRI .
 
 map:om_024 rml:reference "distrito" ;
@@ -176,7 +177,7 @@ map:om_027 rml:reference "Wikidata Madrid District Code" ;
 	rr:termType rr:IRI .
 
 map:om_028 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:constant ns:InjuryType ;
+	rr:constant nso:InjuryType ;
 	rr:termType rr:IRI .
 
 map:om_029 rml:reference "cod_lesividad" ;
@@ -189,7 +190,7 @@ map:om_030 rml:reference "lesividad" ;
 	rr:termType rr:Literal .
 
 map:om_031 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:constant ns:Coordinates ;
+	rr:constant nso:Coordinates ;
 	rr:termType rr:IRI .
 
 map:om_032 rml:reference "coordenada_x_utm" ;
@@ -203,12 +204,12 @@ map:om_033 rml:reference "coordenada_y_utm" ;
 	rr:termType rr:Literal .
 
 map:om_034 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:constant ns:Address ;
+	rr:constant nso:Address ;
 	rr:termType rr:IRI .
 
 map:om_035 rml:reference "numero" ;
 	<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:ObjectMap ;
-	rr:datatype xsd:integer ;
+	rr:datatype xsd:string ;
 	rr:termType rr:Literal .
 
 map:om_036 rml:reference "localizacion" ;
@@ -223,31 +224,31 @@ map:pm_000 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
 
 map:pm_001 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:occuredOn .
+	rr:constant nso:occuredOn .
 
 map:pm_002 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:num_Expediente .
+	rr:constant nso:num_Expediente .
 
 map:pm_003 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:typeOfAccident .
+	rr:constant nso:typeOfAccident .
 
 map:pm_004 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:vehicleInvolved .
+	rr:constant nso:vehicleInvolved .
 
 map:pm_005 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:weatherCondition .
+	rr:constant nso:weatherCondition .
 
 map:pm_006 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:personInvolved .
+	rr:constant nso:personInvolved .
 
 map:pm_007 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:locatedAt .
+	rr:constant nso:locatedAt .
 
 map:pm_008 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
 
 map:pm_009 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:typeOfVehicle .
+	rr:constant nso:typeOfVehicle .
 
 map:pm_010 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant rdfs:label .
@@ -259,7 +260,7 @@ map:pm_012 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
 
 map:pm_013 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:weatherType .
+	rr:constant nso:weatherType .
 
 map:pm_014 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant rdfs:label .
@@ -271,31 +272,31 @@ map:pm_016 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
 
 map:pm_017 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:gender .
+	rr:constant nso:gender .
 
 map:pm_018 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:rangeOfAge .
+	rr:constant nso:rangeOfAge .
 
 map:pm_019 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:typeOfPerson .
+	rr:constant nso:typeOfPerson .
 
 map:pm_020 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:physicalDamages .
+	rr:constant nso:physicalDamages .
 
 map:pm_021 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:alcoholInfluence .
+	rr:constant nso:alcoholInfluence .
 
 map:pm_022 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:drugInfluence .
+	rr:constant nso:drugInfluence .
 
 map:pm_023 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
 
 map:pm_024 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:name .
+	rr:constant nso:name .
 
 map:pm_025 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant <nr:districtCode> .
+	rr:constant nso:districtCode .
 
 map:pm_026 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant rdfs:label .
@@ -307,31 +308,31 @@ map:pm_028 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
 
 map:pm_029 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:code .
+	rr:constant nso:code .
 
 map:pm_030 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:description .
+	rr:constant nso:description .
 
 map:pm_031 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
 
 map:pm_032 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:latitude .
+	rr:constant nso:latitude .
 
 map:pm_033 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:longitude .
+	rr:constant nso:longitude .
 
 map:pm_034 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
 	rr:constant <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
 
 map:pm_035 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:Number .
+	rr:constant nso:Number .
 
 map:pm_036 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:hasRoad .
+	rr:constant nso:hasRoad .
 
 map:pm_037 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateMap ;
-	rr:constant ns:districtCode .
+	rr:constant nso:districtCode .
 
 map:pom_000 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:PredicateObjectMap ;
 	rr:objectMap map:om_000 ;
@@ -495,7 +496,7 @@ map:s_001 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:SubjectMap ;
 	rr:template "http://MadridTransit.com/Vehicles/{tipo_vehiculo}" .
 
 map:s_002 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:SubjectMap ;
-	rr:template "http://MadridTransit.com/Weather/{estado_meteorologico}" .
+	rr:template "http://MadridTransit.com/Weathers/{estado_meteorologico}" .
 
 map:s_003 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:SubjectMap ;
 	rr:template "http://MadridTransit.com/Persons/{recordNumber}" .
@@ -510,7 +511,7 @@ map:s_006 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:SubjectMap ;
 	rr:template "http://MadridTransit.com/Coordinates/{recordNumber}" .
 
 map:s_007 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> rr:SubjectMap ;
-	rr:template "http://MadridTransit.com/Address/{recordNumber}" .
+	rr:template "http://MadridTransit.com/Address/{num_expediente}" .
 
 map:source_000 rml:referenceFormulation ql:CSV ;
 	rml:source "Accidents-in-Madrid-with-Links-updated-csv.csv" ;
